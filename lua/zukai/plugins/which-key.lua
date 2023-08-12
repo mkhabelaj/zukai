@@ -161,33 +161,35 @@ local mappings = {
 
 	l = {
 		name = "LSP",
-		a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
+		c = { "<cmd>Lspsaga code_action<CR>", "Code Action" },
 		d = {
 			"<cmd>Telescope diagnostics bufnr=0<cr>",
 			"Document Diagnostics",
 		},
-		w = {
-			"<cmd>Telescope diagnostics<cr>",
-			"Workspace Diagnostics",
-		},
+		r = { "<cmd>Lspsaga rename<CR>", "Smart Rename" },
+		l = { "<cmd>Lspsaga show_line_diagnostics<CR>", "Line Diagnostics" },
+		q = { "<cmd>Lspsaga show_cursor_diagnostics<CR>", "Cursor Diagnostics" },
+		w = { "<cmd>Telescope diagnostics<CR>", "Workspace Diagnostics" },
+		k = { "<cmd>Lspsaga diagnostic_jump_prev<CR>", "Prev Diagnostics" },
+		j = { "<cmd>Lspsaga diagnostic_jump_next<CR>", "Next Diagnostics" },
+		o = { "<cmd>Lspsaga outline<CR>", "Show outline" },
 		f = { "<cmd>lua vim.lsp.buf.format{async=true}<cr>", "Format" },
 		i = { "<cmd>LspInfo<cr>", "Info" },
 		I = { "<cmd>LspInstallInfo<cr>", "Installer Info" },
-		j = {
-			"<cmd>lua vim.lsp.diagnostic.goto_next()<CR>",
-			"Next Diagnostic",
-		},
-		k = {
-			"<cmd>lua vim.lsp.diagnostic.goto_prev()<cr>",
-			"Prev Diagnostic",
-		},
-		l = { "<cmd>lua vim.lsp.codelens.run()<cr>", "CodeLens Action" },
-		q = { "<cmd>lua vim.diagnostic.setloclist()<cr>", "Quickfix" },
-		r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
+		Q = { "<cmd>lua vim.diagnostic.setloclist()<cr>", "Quickfix" },
 		s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
 		S = {
 			"<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",
 			"Workspace Symbols",
+		},
+		z = {
+			name = "Langauge specific",
+			t = {
+				name = "typesctipt",
+				r = { "<cmd>TypescriptRenameFile<CR>", "rename" },
+				o = { "<cmd>TypescriptOrganizeImports<CR>", "Organize Imports" },
+				u = { "<cmd>TypescriptRemoveUnused<CR>", "Remove Unused" },
+			},
 		},
 	},
 	s = {
