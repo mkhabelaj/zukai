@@ -93,32 +93,12 @@ lspconfig["cssls"].setup({
 -- })
 
 -- configure emmet language server
--- lspconfig["emmet_ls"].setup({
---   capabilities = capabilities,
---   on_attach = on_attach,
---   filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
--- })
 --
--- configure lua server (with special settings)
--- lspconfig["lua_ls"].setup({
---   capabilities = capabilities,
---   on_attach = on_attach,
---   settings = { -- custom settings for lua
---     Lua = {
---       -- make the language server recognize "vim" global
---       diagnostics = {
---         globals = { "vim" },
---       },
---       workspace = {
---         -- make language server aware of runtime files
---         library = {
---           [vim.fn.expand("$VIMRUNTIME/lua")] = true,
---           [vim.fn.stdpath("config") .. "/lua"] = true,
---         },
---       },
---     },
---   },
--- })
+lspconfig["emmet_ls"].setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
+	filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
+})
 
 lspconfig["lua_ls"].setup({
 	capabilities = capabilities,
