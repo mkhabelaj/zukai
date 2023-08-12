@@ -106,9 +106,14 @@ local mappings = {
 	["+"] = { "<C-a>", "increment number" },
 	["-"] = { "<C-x>", "decrement number" },
 	["a"] = { "<cmd>Alpha<cr>", "Alpha" },
-	["b"] = {
-		"<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
-		"Buffers",
+	b = {
+		name = "Buffers",
+		["b"] = {
+			"<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
+			"Buffers",
+		},
+		["p"] = { "<cmd>bprevious<CR>", "Previous" },
+		["n"] = { "<cmd>bnext<CR>", "Next" },
 	},
 	["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
 	["w"] = { "<cmd>w!<CR>", "Save" },

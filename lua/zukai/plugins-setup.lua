@@ -100,9 +100,11 @@ return packer.startup(function(use)
 
 	-- Which key for self documenting keymaps
 	use("folke/which-key.nvim")
-
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
+
+	-- using packer.nvim
+	use({ "akinsho/bufferline.nvim", tag = "*", requires = "nvim-tree/nvim-web-devicons" })
 	if packer_bootstrap then
 		require("packer").sync()
 	end
