@@ -18,3 +18,13 @@ keymap.set("n", "<leader>nh", ":nohl<CR>") -- clear after carrage return work af
 -- keymap.set("n", "<leader>gfc", "<cmd>Telescope git_bcommits<cr>") -- list git commits for current file/buffer (use <cr> to checkout) ["gfc" for git file commits]
 -- keymap.set("n", "<leader>gb", "<cmd>Telescope git_branches<cr>") -- list git branches (use <cr> to checkout) ["gb" for git branch]
 -- keymap.set("n", "<leader>gs", "<cmd>Telescope git_status<cr>") -- list current changes per file with diff preview ["gs" for git status]
+
+-- vim.keymap.set("x", "<leader>re", ":Refactor extract ")
+-- vim.keymap.set("x", "<leader>rf", ":Refactor extract_to_file ")
+--
+-- vim.keymap.set("x", "<leader>rv", ":Refactor extract_var ")
+--
+-- vim.keymap.set({ "n", "x" }, "<leader>ri", ":Refactor inline_var")
+--
+-- vim.keymap.set("n", "<leader>rb", ":Refactor extract_block")
+-- vim.keymap.set("n", "<leader>rbf", ":Refactor extract_block_to_file")

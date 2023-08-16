@@ -105,6 +105,16 @@ return packer.startup(function(use)
 
 	-- using packer.nvim
 	use({ "akinsho/bufferline.nvim", tag = "*", requires = "nvim-tree/nvim-web-devicons" })
+
+	-- Refactor code
+	use({
+		"ThePrimeagen/refactoring.nvim",
+		requires = {
+			{ "nvim-lua/plenary.nvim" },
+			{ "nvim-treesitter/nvim-treesitter" },
+		},
+	})
+
 	if packer_bootstrap then
 		require("packer").sync()
 	end

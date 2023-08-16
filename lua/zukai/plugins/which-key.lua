@@ -92,7 +92,7 @@ local defaults = {
 	},
 }
 
-local opts = {
+local normal_mode_opts = {
 	mode = "n", -- NORMAL mode
 	prefix = "<leader>",
 	buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
@@ -101,7 +101,7 @@ local opts = {
 	nowait = true, -- use `nowait` when creating keymaps
 }
 
-local mappings = {
+local normal_mode_mappings = {
 
 	["+"] = { "<C-a>", "increment number" },
 	["-"] = { "<C-x>", "decrement number" },
@@ -192,6 +192,13 @@ local mappings = {
 			},
 		},
 	},
+
+	r = {
+		name = "Refatorting",
+		b = { "<cmd>Refactor extract_block<CR>", "Extract block" },
+		i = { "<cmd>Refactor inline_var<CR>", "Refactor inline" },
+		x = { "<cmd>Refactor extract_block_to_file<CR>", "Extract block to file" },
+	},
 	s = {
 		name = "Search",
 		b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
@@ -216,5 +223,25 @@ local mappings = {
 	},
 }
 
+local select_mode_opts = {
+	mode = "x", -- NORMAL mode
+	prefix = "<leader>",
+	buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
+	silent = true, -- use `silent` when creating keymaps
+	noremap = true, -- use `noremap` when creating keymaps
+	nowait = true, -- use `nowait` when creating keymaps
+}
+local select_mode_mappings = {
+
+	r = {
+		name = "Refatorting",
+		e = { "<cmd>Refactor extract <CR>", "Extract" },
+		f = { "<cmd>Refactor extract_to_file <CR>", "Extract to file" },
+		v = { "<cmd>Refactor extract_var <CR>", "Extract var" },
+		i = { "<cmd>Refactor inline_var<CR>", "Refactor inline" },
+	},
+}
 which_key.setup(defaults)
-which_key.register(mappings, opts)
+
+which_key.register(normal_mode_mappings, normal_mode_opts)
+which_key.register(select_mode_mappings, select_mode_opts)
