@@ -115,6 +115,8 @@ return packer.startup(function(use)
 		},
 	})
 
+	-- Css color highlighting
+	use("brenoprata10/nvim-highlight-colors")
 	if packer_bootstrap then
 		require("packer").sync()
 	end
