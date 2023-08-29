@@ -26,6 +26,7 @@ null_ls.setup({
 			end,
 		}),
 		null_ls.builtins.code_actions.gitsigns,
+		formatting.black.with({ extra_args = { "--fast" } }),
 	},
 	-- configure format on save
 	on_attach = function(current_client, bufnr)

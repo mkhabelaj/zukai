@@ -28,6 +28,7 @@ mason_lspconfig.setup({
 		"cssls",
 		"lua_ls",
 		"emmet_ls",
+		"pyright",
 	},
 })
 
@@ -36,5 +37,7 @@ mason_null_ls.setup({
 		"prettier",
 		"stylua",
 		"eslint_d",
+		"black",
 	},
+	automatic_installation = false,
 })
