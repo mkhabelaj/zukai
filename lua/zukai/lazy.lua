@@ -17,9 +17,9 @@ require("lazy").setup({ { import = "zukai.plugins" }, { import = "zukai.plugins.
 	},
 	checker = {
 		enabled = true,
-		notify = true,
+		notify = false,
 	},
 	change_detection = {
-		notify = true,
+		notify = false,
 	},
 })
