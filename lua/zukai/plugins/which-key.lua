@@ -195,6 +195,15 @@ return {
 					"<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",
 					"Workspace Symbols",
 				},
+				t = {
+					name = "Trouble",
+					t = { "<cmd>TroubleToggle<cr>", "Toggle" },
+					w = { "<cmd>TroubleToggle lsp_workspace_diagnostics<cr>", "Workspace Diagnostics" },
+					d = { "<cmd>TroubleToggle lsp_document_diagnostics<cr>", "Document Diagnostics" },
+					q = { "<cmd>TroubleToggle quickfix<cr>", "Quickfix" },
+					l = { "<cmd>TroubleToggle loclist<cr>", "Loclist" },
+					r = { "<cmd>TroubleToggle lsp_references<cr>", "References" },
+				},
 				z = {
 					name = "Langauge specific",
 					t = {
