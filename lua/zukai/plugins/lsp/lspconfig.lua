@@ -27,84 +27,33 @@ return {
 
 		-- enable keybinds only for when lsp server available
 		local on_attach = function(client, bufnr)
-			-- keybind options
 			local opts = { noremap = true, silent = true, buffer = bufnr }
-
-			-- set keybinds
-			keymap.set("n", "gf", "<cmd>Lspsaga finder<CR>", extend(opts, { desc = "Show LSP references" })) -- show definition, references
-			keymap.set("n", "gd", "<cmd>Lspsaga peek_definition<CR>", extend(opts, { desc = "LSP Peek at definition" })) -- got to definition
-			keymap.set("n", "gD", "<cmd>Lspsaga goto_definition<CR>", extend(opts, { desc = "LSP Go to definition" })) -- see definition and make edits in window
-			keymap.set("n", "gI", vim.lsp.buf.implementation, extend(opts, { desc = "LSP go to implementation" })) -- go to implementation
-			keymap.set(
-				"n",
-				"gt",
-				"<cmd>Lspsaga peek_type_definition<CR>",
-				extend(opts, { desc = "LSP Peek at type definition" })
-			) -- see peek type definition
-			keymap.set(
-				"n",
-				"gT",
-				"<cmd>Lspsaga go_to_type_definition<CR>",
-				extend(opts, { desc = "LSP Go to type definiton" })
-			) -- see go to type definition
-			keymap.set("n", "K", "<cmd>Lspsaga hover_doc<CR>", extend(opts, { desc = "LSP Show documentation" })) -- show documentation for what is under cursor
-
-			keymap.set("n", "<leader>la", "<cmd>Lspsaga code_action<CR>", extend(opts, { desc = "LSP Code actions" })) -- see available code actions
-			keymap.set("n", "<leader>lr", "<cmd>Lspsaga rename<CR>", extend(opts, { desc = "LSP Rename" })) -- smart rename
-			keymap.set(
-				"n",
-				"<leader>ll",
-				"<cmd>Lspsaga show_line_diagnostics<CR>",
-				extend(opts, { desc = "LSP Show line diagnostics" })
-			) -- show  diagnostics for line
-			keymap.set(
-				"n",
-				"<leader>lq",
-				"<cmd>Lspsaga show_cursor_diagnostics<CR>",
-				extend(opts, { desc = "LSP Show cursor diagnostics" })
-			) -- show diagnostics for cursor
-			keymap.set(
-				"n",
-				"<leader>lw",
-				"<cmd>Telescope diagnostics<CR>",
-				extend(opts, { desc = "Show Telescope diagnostics" })
-			) -- show diagnostics for cursor
-
-			keymap.set(
-				"n",
-				"<leader>lk",
-				"<cmd>Lspsaga diagnostic_jump_prev<CR>",
-				extend(opts, { desc = "LSP Jump to previous diagnostics" })
-			) -- jump to previous diagnostic in buffer
-			keymap.set(
-				"n",
-				"<leader>lj",
-				"<cmd>Lspsaga diagnostic_jump_next<CR>",
-				extend(opts, { desc = "LSP Jump to next diagnostics" })
-			) -- jump to next diagnostic in buffer
-			keymap.set("n", "<leader>lo", "<cmd>Lspsaga outline<CR>", extend(opts, { desc = "LSP Show code outline" })) -- see outline on right hand side
-
-			-- typescript specific keymaps (e.g. rename file and update imports)
-			if client.name == "tsserver" then
-				keymap.set(
-					"n",
-					"<leader>lztr",
-					":TypescriptRenameFile<CR>",
-					extend(opts, { desc = "Typescript Rename" })
-				) -- rename file and update imports
-				keymap.set(
-					"n",
-					"<leader>lzto",
-					":TypescriptOrganizeImports<CR>",
-					extend(opts, { desc = "Typescript organize imports " })
-				) -- organize imports (not in youtube nvim video)
-				keymap.set(
-					"n",
-					"<leader>lztu",
-					":TypescriptRemoveUnused<CR>",
-					extend(opts, { desc = "Typescript Remove unused imports" })
-				) -- remove unused variables (not in youtube nvim video)
+			-- keybind options
+			-- A function to simplify setting the keymap. and takes into account for variations above
+			local function map(mode, key, result, desc)
+				keymap.set(mode, key, result, vim.tbl_extend("keep", opts, { desc = desc }))
 			end
+
+			map("n", "gr", "<cmd>Telescope lsp_references<CR>", "Show LSP references")
+			map("n", "gd", "<cmd>Telescope lsp_definitions<CR>", "Show LSP definitions")
+			map("n", "gD", vim.lsp.buf.declaration, "LSP go to declaration")
+			map("n", "gI", vim.lsp.buf.implementation, "LSP go to implementation")
+			map("n", "gt", "<cmd>Telescope lsp_type_definitions()<CR>", "Show LSP type definitions")
+			map({ "n", "v" }, "<leader>la", vim.lsp.buf.code_action, "LSP code action")
+
+			map("n", "<leader>la", vim.lsp.buf.code_action, "LSP code action")
+			map("n", "<leader>lr", vim.lsp.buf.rename, "LSP rename")
+			map("n", "<leader>ll", vim.diagnostic.open_float, "LSP show line diagnostics")
+			map("n", "<leader>lw", "<cmd>Telescope diagnostics<CR>", "Show Telescope diagnostics")
+			map("n", "<leader>lk", "<cmd>lua vim.diagnostic.goto_prev({buf=0})<CR>", "LSP go to previous diagnostics")
+			map("n", "<leader>lj", "<cmd>lua vim.diagnostic.goto_next({buf=0})<CR>", "LSP go to next diagnostics")
+			map("n", "<leader>lR", ":LspRestart<CR>", "LSP restart")
+			map("n", "<leader>lf", "<cmd>lua vim.lsp.buf.format({ async = true })<cr>", "LSP format")
+			map("n", "<leader>lq", vim.diagnostic.setloclist, "LSP set loclist")
+			map("n", "<leader>ls", "<cmd>Telescope lsp_document_symbols<CR>", "LSP show document symbols")
+			map("n", "<leader>lS", "<cmd>Telescope lsp_workspace_symbols<CR>", "LSP show workspace symbols")
+
+			-- buf_set_keymap("n", "<leader>lo", "<cmd>Lspsaga outline<CR>", "LSP Show code outline")
 		end
 
 		-- used to enable autocompletion (assign to every lsp server config)

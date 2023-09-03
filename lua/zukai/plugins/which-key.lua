@@ -165,61 +165,16 @@ return {
 
 			h = {
 				name = "Harpoon",
-				m = { "<cmd>lua require('harpoon.mark').add_file()<cr>", "Mark file with harpoon" },
-				r = { "<cmd>lua require('harpoon.mark').rm_file()<cr>", "Remove file from harpoon" },
-				n = { "<cmd>lua require('harpoon.ui').nav_next()<cr>", "Go to next harpoon mark" },
-				p = { "<cmd>lua require('harpoon.ui').nav_prev()<cr>", "Go to previous harpoon mark" },
-				s = { "<cmd>Telescope harpoon marks<cr>", "Show marks" },
-				q = { "<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>", "Quick Menu" },
 			},
 			l = {
 				name = "LSP",
-				c = { "<cmd>Lspsaga code_action<CR>", "Code Action" },
-				d = {
-					"<cmd>Telescope diagnostics bufnr=0<cr>",
-					"Document Diagnostics",
-				},
-				r = { "<cmd>Lspsaga rename<CR>", "Smart Rename" },
-				l = { "<cmd>Lspsaga show_line_diagnostics<CR>", "Line Diagnostics" },
-				q = { "<cmd>Lspsaga show_cursor_diagnostics<CR>", "Cursor Diagnostics" },
-				w = { "<cmd>Telescope diagnostics<CR>", "Workspace Diagnostics" },
-				k = { "<cmd>Lspsaga diagnostic_jump_prev<CR>", "Prev Diagnostics" },
-				j = { "<cmd>Lspsaga diagnostic_jump_next<CR>", "Next Diagnostics" },
-				o = { "<cmd>Lspsaga outline<CR>", "Show outline" },
-				f = { "<cmd>lua vim.lsp.buf.format{async=true}<cr>", "Format" },
-				i = { "<cmd>LspInfo<cr>", "Info" },
-				I = { "<cmd>LspInstallInfo<cr>", "Installer Info" },
-				Q = { "<cmd>lua vim.diagnostic.setloclist()<cr>", "Quickfix" },
-				s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
-				S = {
-					"<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",
-					"Workspace Symbols",
-				},
 				t = {
 					name = "Trouble",
-					t = { "<cmd>TroubleToggle<cr>", "Toggle" },
-					w = { "<cmd>TroubleToggle lsp_workspace_diagnostics<cr>", "Workspace Diagnostics" },
-					d = { "<cmd>TroubleToggle lsp_document_diagnostics<cr>", "Document Diagnostics" },
-					q = { "<cmd>TroubleToggle quickfix<cr>", "Quickfix" },
-					l = { "<cmd>TroubleToggle loclist<cr>", "Loclist" },
-					r = { "<cmd>TroubleToggle lsp_references<cr>", "References" },
-				},
-				z = {
-					name = "Langauge specific",
-					t = {
-						name = "typesctipt",
-						r = { "<cmd>TypescriptRenameFile<CR>", "rename" },
-						o = { "<cmd>TypescriptOrganizeImports<CR>", "Organize Imports" },
-						u = { "<cmd>TypescriptRemoveUnused<CR>", "Remove Unused" },
-					},
 				},
 			},
 
 			r = {
 				name = "Refatorting",
-				b = { "<cmd>Refactor extract_block<CR>", "Extract block" },
-				i = { "<cmd>Refactor inline_var<CR>", "Refactor inline" },
-				x = { "<cmd>Refactor extract_block_to_file<CR>", "Extract block to file" },
 			},
 			s = {
 				name = "Sessions",
