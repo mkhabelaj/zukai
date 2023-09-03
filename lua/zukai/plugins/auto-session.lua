@@ -1,3 +1,4 @@
+local utils = require("zukai.utils")
 return {
 	"rmagatti/auto-session",
 	config = function()
@@ -8,9 +9,13 @@ return {
 			auto_session_suppress_dirs = { "~/", "~/Dev/", "~/Downloads", "~/Documents", "~/Desktop/" },
 		})
 
-		local keymap = vim.keymap
-
-		keymap.set("n", "<leader>Sr", "<cmd>SessionRestore<CR>", { desc = "Restore session for cwd" }) -- restore last workspace session for current directory
-		keymap.set("n", "<leader>Ss", "<cmd>SessionSave<CR>", { desc = "Save session for auto session root dir" }) -- save workspace session for current working directory
+		utils.map("n", "<leader>Sr", "<cmd>lua require('auto-session').restore()<CR>", "Restore session for cwd")
+		utils.map(
+			"n",
+			"<leader>St",
+			"<cmd>lua require('auto-session').toggle_auto_session()<CR>",
+			"Toggle auto session"
+		)
+		utils.map("n", "<leader>Ss", "<cmd>lua require('auto-session').save()<CR>", "Save session for cwd")
 	end,
 }

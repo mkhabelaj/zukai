@@ -5,6 +5,8 @@ local function extend(tab1, tab2)
 	return tab1
 end
 
+local utils = require("zukai.utils")
+
 return {
 	"neovim/nvim-lspconfig",
 	event = { "BufReadPre", "BufNewFile" },
@@ -23,35 +25,42 @@ return {
 		-- import typescript plugin safely
 		local typescript = require("typescript")
 
-		local keymap = vim.keymap -- for conciseness
-
 		-- enable keybinds only for when lsp server available
 		local on_attach = function(client, bufnr)
 			local opts = { noremap = true, silent = true, buffer = bufnr }
 			-- keybind options
 			-- A function to simplify setting the keymap. and takes into account for variations above
-			local function map(mode, key, result, desc)
-				keymap.set(mode, key, result, vim.tbl_extend("keep", opts, { desc = desc }))
-			end
 
-			map("n", "gr", "<cmd>Telescope lsp_references<CR>", "Show LSP references")
-			map("n", "gd", "<cmd>Telescope lsp_definitions<CR>", "Show LSP definitions")
-			map("n", "gD", vim.lsp.buf.declaration, "LSP go to declaration")
-			map("n", "gI", vim.lsp.buf.implementation, "LSP go to implementation")
-			map("n", "gt", "<cmd>Telescope lsp_type_definitions()<CR>", "Show LSP type definitions")
-			map({ "n", "v" }, "<leader>la", vim.lsp.buf.code_action, "LSP code action")
+			utils.map("n", "gr", "<cmd>Telescope lsp_references<CR>", "Show LSP references", opts)
+			utils.map("n", "gd", "<cmd>Telescope lsp_definitions<CR>", "Show LSP definitions", opts)
+			utils.map("n", "gD", vim.lsp.buf.declaration, "LSP go to declaration", opts)
+			utils.map("n", "gI", vim.lsp.buf.implementation, "LSP go to implementation", opts)
+			utils.map("n", "gt", "<cmd>Telescope lsp_type_definitions()<CR>", "Show LSP type definitions", opts)
+			utils.map({ "n", "v" }, "<leader>la", vim.lsp.buf.code_action, "LSP code action", opts)
 
-			map("n", "<leader>la", vim.lsp.buf.code_action, "LSP code action")
-			map("n", "<leader>lr", vim.lsp.buf.rename, "LSP rename")
-			map("n", "<leader>ll", vim.diagnostic.open_float, "LSP show line diagnostics")
-			map("n", "<leader>lw", "<cmd>Telescope diagnostics<CR>", "Show Telescope diagnostics")
-			map("n", "<leader>lk", "<cmd>lua vim.diagnostic.goto_prev({buf=0})<CR>", "LSP go to previous diagnostics")
-			map("n", "<leader>lj", "<cmd>lua vim.diagnostic.goto_next({buf=0})<CR>", "LSP go to next diagnostics")
-			map("n", "<leader>lR", ":LspRestart<CR>", "LSP restart")
-			map("n", "<leader>lf", "<cmd>lua vim.lsp.buf.format({ async = true })<cr>", "LSP format")
-			map("n", "<leader>lq", vim.diagnostic.setloclist, "LSP set loclist")
-			map("n", "<leader>ls", "<cmd>Telescope lsp_document_symbols<CR>", "LSP show document symbols")
-			map("n", "<leader>lS", "<cmd>Telescope lsp_workspace_symbols<CR>", "LSP show workspace symbols")
+			utils.map("n", "<leader>la", vim.lsp.buf.code_action, "LSP code action", opts)
+			utils.map("n", "<leader>lr", vim.lsp.buf.rename, "LSP rename", opts)
+			utils.map("n", "<leader>ll", vim.diagnostic.open_float, "LSP show line diagnostics", opts)
+			utils.map("n", "<leader>lw", "<cmd>Telescope diagnostics<CR>", "Show Telescope diagnostics", opts)
+			utils.map(
+				"n",
+				"<leader>lk",
+				"<cmd>lua vim.diagnostic.goto_prev({buf=0})<CR>",
+				"LSP go to previous diagnostics",
+				opts
+			)
+			utils.map(
+				"n",
+				"<leader>lj",
+				"<cmd>lua vim.diagnostic.goto_next({buf=0})<CR>",
+				"LSP go to next diagnostics",
+				opts
+			)
+			utils.map("n", "<leader>lR", ":LspRestart<CR>", "LSP restart", opts)
+			utils.map("n", "<leader>lf", "<cmd>lua vim.lsp.buf.format({ async = true })<cr>", "LSP format", opts)
+			utils.map("n", "<leader>lq", vim.diagnostic.setloclist, "LSP set loclist", opts)
+			utils.map("n", "<leader>ls", "<cmd>Telescope lsp_document_symbols<CR>", "LSP show document symbols", opts)
+			utils.map("n", "<leader>lS", "<cmd>Telescope lsp_workspace_symbols<CR>", "LSP show workspace symbols", opts)
 
 			-- buf_set_keymap("n", "<leader>lo", "<cmd>Lspsaga outline<CR>", "LSP Show code outline")
 		end
