@@ -37,6 +37,8 @@ return {
 			utils.map("n", "gI", vim.lsp.buf.implementation, "LSP go to implementation", opts)
 			utils.map("n", "gt", "<cmd>Telescope lsp_type_definitions()<CR>", "Show LSP type definitions", opts)
 			utils.map({ "n", "v" }, "<leader>la", vim.lsp.buf.code_action, "LSP code action", opts)
+			-- show documentation for the symbol under the cursor
+			utils.map("n", "K", vim.lsp.buf.hover, "LSP show hover documentation", opts)
 
 			utils.map("n", "<leader>la", vim.lsp.buf.code_action, "LSP code action", opts)
 			utils.map("n", "<leader>lr", vim.lsp.buf.rename, "LSP rename", opts)
