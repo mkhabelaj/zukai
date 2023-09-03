@@ -159,19 +159,9 @@ return {
 			},
 			s = {
 				name = "Sessions",
-				r = { "<cmd>SessionRestore<CR>", "Restore session for cwd" },
-				s = { "<cmd>SessionSave<cr>", "Save session for auto session root dir" },
 			},
 			t = {
 				name = "Telescope Search",
-				b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
-				c = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
-				h = { "<cmd>Telescope help_tags<cr>", "Find Help" },
-				M = { "<cmd>Telescope man_pages<cr>", "Man Pages" },
-				r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
-				R = { "<cmd>Telescope registers<cr>", "Registers" },
-				k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
-				C = { "<cmd>Telescope commands<cr>", "Commands" },
 			},
 
 			W = {
@@ -187,7 +177,7 @@ return {
 		}
 
 		local select_mode_opts = {
-			mode = "x", -- NORMAL mode
+			mode = "x",
 			prefix = "<leader>",
 			buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
 			silent = true, -- use `silent` when creating keymaps
@@ -198,10 +188,6 @@ return {
 
 			r = {
 				name = "Refatorting",
-				e = { "<cmd>Refactor extract <CR>", "Extract" },
-				f = { "<cmd>Refactor extract_to_file <CR>", "Extract to file" },
-				v = { "<cmd>Refactor extract_var <CR>", "Extract var" },
-				i = { "<cmd>Refactor inline_var<CR>", "Refactor inline" },
 			},
 		}
 		which_key.setup(defaults)

@@ -1,3 +1,4 @@
+local utils = require("zukai.utils")
 return {
 	"nvim-telescope/telescope.nvim",
 	branch = "0.1.x",
@@ -7,6 +8,7 @@ return {
 		"nvim-telescope/telescope-ui-select.nvim",
 		"nvim-tree/nvim-web-devicons",
 		"ThePrimeagen/harpoon",
+		"rmagatti/auto-session",
 	},
 	config = function()
 		local telescope = require("telescope")
@@ -36,7 +38,16 @@ return {
 			},
 		})
 
+		utils.map("n", "<leader>tb", "<cmd>Telescope git_branches<cr>", "Checkout branch")
+		utils.map("n", "<leader>tc", "<cmd>Telescope colorscheme<cr>", "Colorscheme")
+		utils.map("n", "<leader>th", "<cmd>Telescope help_tags<cr>", "Find Help")
+		utils.map("n", "<leader>tr", "<cmd>Telescope oldfiles<cr>", "Open Recent File")
+		utils.map("n", "<leader>tR", "<cmd>Telescope registers<cr>", "Registers")
+		utils.map("n", "<leader>tk", "<cmd>Telescope keymaps<cr>", "Keymaps")
+		utils.map("n", "<leader>tC", "<cmd>Telescope commands<cr>", "Commands")
+
 		telescope.load_extension("fzf")
 		telescope.load_extension("harpoon")
+		telescope.load_extension("session-lens")
 	end,
 }

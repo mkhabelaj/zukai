@@ -2,8 +2,11 @@
 local utils = {}
 
 local keymap = vim.keymap -- for conciseness
-utils.make_lazy_key = function(keys, comand, desc)
-	return { keys, comand, desc = desc }
+utils.make_lazy_key = function(keys, comand, desc, mode)
+	if mode == nil then
+		return { keys, comand, desc = desc }
+	end
+	return { keys, comand, mode = mode, desc = desc }
 end
 utils.map = function(mode, key, result, desc, default_opts)
 	local description = { desc = desc }
