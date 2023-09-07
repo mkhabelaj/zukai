@@ -31,8 +31,9 @@ return {
 			-- keybind options
 			-- A function to simplify setting the keymap. and takes into account for variations above
 
-			utils.map("n", "gr", "<cmd>Telescope lsp_references<CR>", "Show LSP references", opts)
+			utils.map("n", "gF", "<cmd>Lspsaga finder<CR>", "Show LSP references", opts)
 			utils.map("n", "gd", "<cmd>Telescope lsp_definitions<CR>", "Show LSP definitions", opts)
+			utils.map("n", "gl", "<cmd>Lspsaga peek_definition<CR>", "Show LSP peek definition", opts)
 			utils.map("n", "gD", vim.lsp.buf.declaration, "LSP go to declaration", opts)
 			utils.map("n", "gI", vim.lsp.buf.implementation, "LSP go to implementation", opts)
 			utils.map("n", "gt", "<cmd>Telescope lsp_type_definitions()<CR>", "Show LSP type definitions", opts)
@@ -63,8 +64,9 @@ return {
 			utils.map("n", "<leader>lq", vim.diagnostic.setloclist, "LSP set loclist", opts)
 			utils.map("n", "<leader>ls", "<cmd>Telescope lsp_document_symbols<CR>", "LSP show document symbols", opts)
 			utils.map("n", "<leader>lS", "<cmd>Telescope lsp_workspace_symbols<CR>", "LSP show workspace symbols", opts)
-
-			-- buf_set_keymap("n", "<leader>lo", "<cmd>Lspsaga outline<CR>", "LSP Show code outline")
+			utils.map("n", "<leader>lR", "<cmd>Telescope lsp_references<CR>", "Show LSP references Telescope", opts)
+			utils.map("n", "<leader>lp", vim.lsp.buf.signature_help, "LSP show signature help", opts)
+			utils.map("n", "<leader>lo", "<cmd>Lspsaga outline<CR>", "LSP Show code outline", opts)
 		end
 
 		-- used to enable autocompletion (assign to every lsp server config)

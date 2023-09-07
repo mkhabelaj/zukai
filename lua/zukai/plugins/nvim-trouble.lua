@@ -3,8 +3,8 @@ return {
 	dependencies = { "nvim-tree/nvim-web-devicons" },
 	keys = {
 		{ "<leader>ltt", "<cmd>TroubleToggle<cr>", desc = "Toggle" },
-		{ "<leader>ltw", "<cmd>TroubleToggle lsp_workspace_diagnostics<cr>", desc = "Workspace Diagnostics" },
-		{ "<leader>ltd", "<cmd>TroubleToggle lsp_document_diagnostics<cr>", desc = "Document Diagnostics" },
+		{ "<leader>ltw", "<cmd>TroubleToggle workspace_diagnostics<cr>", desc = "Workspace Diagnostics" },
+		{ "<leader>ltd", "<cmd>TroubleToggle document_diagnostics<cr>", desc = "Document Diagnostics" },
 		{ "<leader>ltq", "<cmd>TroubleToggle quickfix<cr>", desc = "Quickfix" },
 		{ "<leader>ltl", "<cmd>TroubleToggle loclist<cr>", desc = "Loclist" },
 		{ "<leader>ltr", "<cmd>TroubleToggle lsp_references<cr>", desc = "References" },

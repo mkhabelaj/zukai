@@ -118,11 +118,11 @@ return {
 				},
 				["p"] = { "<cmd>bprevious<CR>", "Previous" },
 				["n"] = { "<cmd>bnext<CR>", "Next" },
+				["x"] = { "<cmd>bd!<CR>", "Close Buffer" },
 			},
 			["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
 			["w"] = { "<cmd>w!<CR>", "Save" },
 			["q"] = { "<cmd>q!<CR>", "Quit" },
-			["x"] = { "<cmd>Bdelete!<CR>", "Close Buffer" },
 			["N"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
 			["f"] = {
 				"<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
