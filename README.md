@@ -1,1 +1,1 @@
-### Zukai -- NeoVim Config
+## Zukai -- NeoVim Config
