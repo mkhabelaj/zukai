@@ -9,7 +9,7 @@ local utils = require("zukai.utils")
 
 return {
 	"neovim/nvim-lspconfig",
-	event = { "BufReadPre", "BufNewFile" },
+	event = "VeryLazy",
 	dependencies = {
 		"jose-elias-alvarez/typescript.nvim",
 		"hrsh7th/cmp-nvim-lsp",
@@ -68,6 +68,12 @@ return {
 			utils.map("n", "<leader>lp", vim.lsp.buf.signature_help, "LSP show signature help", opts)
 			utils.map("n", "<leader>lo", "<cmd>Lspsaga outline<CR>", "LSP Show code outline", opts)
 		end
+
+		local vim_opt = vim.o
+		vim_opt.foldcolumn = "1" -- '0' is not bad
+		vim_opt.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
+		vim_opt.foldlevelstart = 99
+		vim_opt.foldenable = true
 
 		-- make_capabilites function
 		local function make_capabilities()
