@@ -69,8 +69,21 @@ return {
 			utils.map("n", "<leader>lo", "<cmd>Lspsaga outline<CR>", "LSP Show code outline", opts)
 		end
 
+		-- make_capabilites function
+		local function make_capabilities()
+			local capabilities = vim.lsp.protocol.make_client_capabilities()
+			capabilities.textDocument.completion.completionItem.snippetSupport = true
+			-- Include folder supoort for lsp
+			capabilities.textDocument.foldingRange = {
+				dynamicRegistration = false,
+				lineFoldingOnly = true,
+			}
+			capabilities = cmp_nvim_lsp.default_capabilities(capabilities)
+			return capabilities
+		end
+
 		-- used to enable autocompletion (assign to every lsp server config)
-		local capabilities = cmp_nvim_lsp.default_capabilities()
+		local capabilities = make_capabilities()
 
 		-- Change the Diagnostic symbols in the sign column (gutter)
 		-- (not in youtube nvim video)
@@ -131,12 +144,16 @@ return {
 			settings = {
 				Lua = {
 					runtime = {
-						-- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
+						-- Tell the language server which version of Lua you're using
+						-- (most likely LuaJIT in the case of Neovim)
 						version = "LuaJIT",
 					},
 					diagnostics = {
 						-- Get the language server to recognize the `vim` global
-						globals = { "vim" },
+						globals = {
+							"vim",
+							"require",
+						},
 					},
 					workspace = {
 						-- Make the server aware of Neovim runtime files

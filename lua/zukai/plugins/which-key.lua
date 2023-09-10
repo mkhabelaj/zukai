@@ -107,9 +107,6 @@ return {
 
 		local normal_mode_mappings = {
 
-			["+"] = { "<C-a>", "increment number" },
-			["-"] = { "<C-x>", "decrement number" },
-			["a"] = { "<cmd>Alpha<cr>", "Alpha" },
 			b = {
 				name = "Buffers",
 				["b"] = {
@@ -123,7 +120,6 @@ return {
 			["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
 			["w"] = { "<cmd>w!<CR>", "Save" },
 			["q"] = { "<cmd>q!<CR>", "Quit" },
-			["N"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
 			["f"] = {
 				"<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
 				"Find files",
@@ -157,22 +153,15 @@ return {
 			r = {
 				name = "Refatorting",
 			},
-			s = {
+			S = {
 				name = "Sessions",
 			},
 			t = {
 				name = "Telescope Search",
 			},
 
-			W = {
+			s = {
 				name = "Window Management",
-				s = {
-					name = "split",
-					v = { "<C-w>v", "Vertical" },
-					h = { "<C-w>s", "Horizontal" },
-					e = { "<C-w>=", "Equal" },
-					c = { ":close<CR>", "Close" },
-				},
 			},
 		}
 

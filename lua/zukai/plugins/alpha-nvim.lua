@@ -6,6 +6,9 @@ return {
 		local alpha = require("alpha")
 		local dashboard = require("alpha.themes.dashboard")
 
+		local utils = require("zukai.utils")
+		utils.map("n", "<leader>a", "<cmd>Alpha<CR>", "Alpha Dashboard")
+
 		-- Set header
 		dashboard.section.header.val = {
 			"                                                     ",
