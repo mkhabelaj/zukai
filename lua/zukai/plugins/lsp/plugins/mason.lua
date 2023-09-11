@@ -19,16 +19,7 @@ return {
 
 		mason_lspconfig.setup({
 			-- list of servers for mason to install
-			ensure_installed = {
-				"angularls",
-				"tsserver",
-				"html",
-				"cssls",
-				"lua_ls",
-				"emmet_ls",
-				"pyright",
-				"jsonls",
-			},
+			ensure_installed = require("zukai.plugins.lsp.config.servers"),
 			-- auto-install configured servers (with lspconfig)
 			automatic_installation = true, -- not the same as ensure_installed
 		})
