@@ -117,7 +117,6 @@ return {
 				["n"] = { "<cmd>bnext<CR>", "Next" },
 				["x"] = { "<cmd>bd!<CR>", "Close Buffer" },
 			},
-			["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
 			["w"] = { "<cmd>w!<CR>", "Save" },
 			["q"] = { "<cmd>q!<CR>", "Quit" },
 			["f"] = {
