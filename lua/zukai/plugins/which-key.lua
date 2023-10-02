@@ -119,13 +119,9 @@ return {
 			},
 			["w"] = { "<cmd>w!<CR>", "Save" },
 			["q"] = { "<cmd>q!<CR>", "Quit" },
-			["f"] = {
-				"<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
-				"Find files",
+			f = {
+				name = "Search",
 			},
-			["F"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
-			["P"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
-
 			p = {
 				name = "LazyVim",
 				c = { "<cmd>Lazy clean<cr>", "Clean" },
@@ -155,10 +151,6 @@ return {
 			S = {
 				name = "Sessions",
 			},
-			t = {
-				name = "Telescope Search",
-			},
-
 			s = {
 				name = "Window Management",
 			},

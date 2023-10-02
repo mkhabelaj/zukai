@@ -54,13 +54,21 @@ return {
 			},
 		})
 
-		utils.map("n", "<leader>tb", "<cmd>Telescope git_branches<cr>", "Checkout branch")
-		utils.map("n", "<leader>tc", "<cmd>Telescope colorscheme<cr>", "Colorscheme")
-		utils.map("n", "<leader>th", "<cmd>Telescope help_tags<cr>", "Find Help")
-		utils.map("n", "<leader>tr", "<cmd>Telescope oldfiles<cr>", "Open Recent File")
-		utils.map("n", "<leader>tR", "<cmd>Telescope registers<cr>", "Registers")
-		utils.map("n", "<leader>tk", "<cmd>Telescope keymaps<cr>", "Keymaps")
-		utils.map("n", "<leader>tC", "<cmd>Telescope commands<cr>", "Commands")
+		utils.map("n", "<leader>fb", "<cmd>Telescope git_branches<cr>", "Checkout branch")
+		utils.map("n", "<leader>fc", "<cmd>Telescope colorscheme<cr>", "Colorscheme")
+		utils.map("n", "<leader>fC", "<cmd>Telescope commands<cr>", "Commands")
+		utils.map(
+			"n",
+			"<leader>ff",
+			"<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
+			"Find Files"
+		)
+		utils.map("n", "<leader>fh", "<cmd>Telescope help_tags<cr>", "Find Help")
+		utils.map("n", "<leader>fk", "<cmd>Telescope keymaps<cr>", "Keymaps")
+		utils.map("n", "<leader>fr", "<cmd>Telescope oldfiles<cr>", "Open Recent File")
+		utils.map("n", "<leader>fR", "<cmd>Telescope registers<cr>", "Registers")
+		utils.map("n", "<leader>fs", "<cmd>Telescope grep_string<cr>", "Find String")
+		utils.map("n", "<leader>ft", "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text")
 
 		telescope.load_extension("fzf")
 		telescope.load_extension("harpoon")
