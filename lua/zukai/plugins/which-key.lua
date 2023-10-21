@@ -88,7 +88,7 @@ return {
 				i = { "j", "k" },
 				v = { "j", "k" },
 			},
-			-- disable the WhichKey popup for certain buf types and file types.
+			-- disable the WhichKey popup for certain buff types and file types.
 			-- Disabled by default for Telescope
 			disable = {
 				buftypes = {},
@@ -154,6 +154,15 @@ return {
 			s = {
 				name = "Window Management",
 			},
+			z = {
+				name = "Spelling",
+				s = { "z=", "Suggestions" },
+				w = { "<cmd>set spell!<cr>", "Toggle Spell" },
+				r = { "<cmd>spellr<cr>", "Replace" },
+				n = { "]s", "Next" },
+				p = { "[s", "Previous" },
+				a = { "zg", "Add to dictionary" },
+			},
 		}
 
 		local select_mode_opts = {
@@ -165,7 +174,6 @@ return {
 			nowait = true, -- use `nowait` when creating keymaps
 		}
 		local select_mode_mappings = {
-
 			r = {
 				name = "Refatorting",
 			},

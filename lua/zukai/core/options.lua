@@ -18,10 +18,10 @@ opt.wrap = false
 opt.ignorecase = true
 opt.smartcase = true
 
--- cursorline
+-- cursor-line
 opt.cursorline = true
 
--- appearance 
+-- appearance
 opt.termguicolors = true
 opt.background = "dark"
 opt.signcolumn = "yes"
@@ -38,3 +38,8 @@ opt.splitright = true
 opt.splitbelow = true
 
 opt.iskeyword:append("-")
+
+-- set spell check to English Canada
+opt.spelllang = "en_ca"
+-- enable spell check
+opt.spell = true
