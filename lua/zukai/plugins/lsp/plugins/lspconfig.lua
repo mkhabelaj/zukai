@@ -21,7 +21,7 @@ return {
 		local on_attach = function(client, bufnr)
 			local opts = { noremap = true, silent = true, buffer = bufnr }
 			-- keybind options
-			-- A function to simplify setting the keymap. and takes into account for variations above
+			-- A function to simplify setting the keymap  and takes into account for variations above
 
 			utils.map("n", "gF", "<cmd>Lspsaga finder<CR>", "Show LSP references", opts)
 			utils.map("n", "gd", "<cmd>Telescope lsp_definitions<CR>", "Show LSP definitions", opts)
@@ -51,7 +51,7 @@ return {
 				"LSP go to next diagnostics",
 				opts
 			)
-			utils.map("n", "<leader>lR", ":LspRestart<CR>", "LSP restart", opts)
+			utils.map("n", "<leader>lb", ":LspRestart<CR>", "LSP restart", opts)
 			utils.map("n", "<leader>lf", "<cmd>lua vim.lsp.buf.format({ async = true })<cr>", "LSP format", opts)
 			utils.map("n", "<leader>lq", vim.diagnostic.setloclist, "LSP set loclist", opts)
 			utils.map("n", "<leader>ls", "<cmd>Telescope lsp_document_symbols<CR>", "LSP show document symbols", opts)
@@ -59,6 +59,8 @@ return {
 			utils.map("n", "<leader>lR", "<cmd>Telescope lsp_references<CR>", "Show LSP references Telescope", opts)
 			utils.map("n", "<leader>lp", vim.lsp.buf.signature_help, "LSP show signature help", opts)
 			utils.map("n", "<leader>lo", "<cmd>Lspsaga outline<CR>", "LSP Show code outline", opts)
+			-- lsp info
+			utils.map("n", "<leader>li", "<cmd>LspInfo<CR>", "LSP Show info", opts)
 		end
 
 		local vim_opt = vim.o
@@ -67,7 +69,7 @@ return {
 		vim_opt.foldlevelstart = 99
 		vim_opt.foldenable = true
 
-		-- make_capabilites function
+		-- make_capabilities function
 		local function make_capabilities()
 			local capabilities = vim.lsp.protocol.make_client_capabilities()
 			capabilities.textDocument.completion.completionItem.snippetSupport = true
