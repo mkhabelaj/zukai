@@ -3,5 +3,6 @@ return vim.tbl_extend(
 	{},
 	require("zukai.plugins.lsp.settings.jsonls"),
 	require("zukai.plugins.lsp.settings.luals"),
-	require("zukai.plugins.lsp.settings.emmetls")
+	require("zukai.plugins.lsp.settings.emmetls"),
+	require("zukai.plugins.lsp.settings.pyright")
 )

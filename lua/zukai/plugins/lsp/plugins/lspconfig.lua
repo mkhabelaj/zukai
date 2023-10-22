@@ -15,10 +15,9 @@ return {
 		local cmp_nvim_lsp = require("cmp_nvim_lsp")
 		local settings = require("zukai.plugins.lsp.settings")
 		-- import typescript plugin safely
-		local typescript = require("typescript")
 
 		-- enable keybinds only for when lsp server available
-		local on_attach = function(client, bufnr)
+		local on_attach = function(_, bufnr)
 			local opts = { noremap = true, silent = true, buffer = bufnr }
 			-- keybind options
 			-- A function to simplify setting the keymap  and takes into account for variations above
