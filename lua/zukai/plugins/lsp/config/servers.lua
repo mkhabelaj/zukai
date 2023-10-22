@@ -7,4 +7,5 @@ return {
 	"emmet_ls",
 	"pyright",
 	"jsonls",
+	"clangd",
 }
