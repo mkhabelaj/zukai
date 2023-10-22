@@ -13,6 +13,5 @@ return {
 		auto_restore_enabled = false,
 		auto_session_suppress_dirs = { "~/", "~/Dev/", "~/Downloads", "~/Documents", "~/Desktop/" },
 		pre_save_cmds = { "NvimTreeClose" },
-		pre_restore_cmds = { "NvimTreeOpen" },
 	},
 }
