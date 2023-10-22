@@ -16,4 +16,9 @@ utils.map = function(mode, key, result, desc, default_opts)
 	keymap.set(mode, key, result, vim.tbl_extend("keep", default_opts, description))
 end
 
+-- is empty
+utils.is_empty = function(s)
+	return s == nil or s == ""
+end
+
 return utils

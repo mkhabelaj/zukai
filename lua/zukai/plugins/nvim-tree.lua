@@ -1,17 +1,25 @@
--- import nvim-tree plugin safely
 return {
 	"nvim-tree/nvim-tree.lua",
 	dependencies = { "nvim-tree/nvim-web-devicons" },
 	config = function()
 		local nvimtree = require("nvim-tree")
-
+		local nvimtree_api = require("nvim-tree.api")
+		local utils = require("zukai.utils")
 		-- recommended settings from nvim-tree documentation
 		vim.g.loaded_netrw = 1
 		vim.g.loaded_netrwPlugin = 1
 
-		-- change color for arrows in tree to light blue
-		vim.cmd([[ highlight NvimTreeIndentMarker guifg=#3FC5FF ]])
-
+		-- Automatically scroll to the current file if Nvim tree is open or toggled
+		vim.api.nvim_create_autocmd("BufEnter", {
+			callback = function(args)
+				if nvimtree_api.tree.is_tree_buf() or utils.is_empty(args.file) or utils.is_empty(args.buf) then
+					return
+				end
+				if nvimtree_api.tree.is_visible() then
+					nvimtree_api.tree.find_file()
+				end
+			end,
+		})
 		-- configure nvim-tree
 		nvimtree.setup({
 			view = {
