@@ -117,7 +117,11 @@ return {
 				["n"] = { "<cmd>bnext<CR>", "Next" },
 				["x"] = { "<cmd>bd!<CR>", "Close Buffer" },
 			},
-			["w"] = { "<cmd>w!<CR>", "Save" },
+			["w"] = { "<cmd>w!<CR>", "Format and Save" },
+			-- noa = no autocommands this skips the null-ls formatting which uses an autocommand
+			-- to format on save (https://github.com/jose-elias-alvarez/null-ls.nvim/discussions/589#discussioncomment-1975748)
+			-- This will likely be removed in the future.
+			["W"] = { "<cmd>noa w!<CR>", "Skip Format and Save" },
 			["q"] = { "<cmd>q!<CR>", "Quit" },
 			f = {
 				name = "Search",
