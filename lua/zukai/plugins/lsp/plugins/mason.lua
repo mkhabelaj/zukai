@@ -31,7 +31,7 @@ return {
 				"stylua",
 				"eslint_d",
 				"black",
-				"astyle",
+				"clang-format",
 			},
 			-- auto-install configured servers (with lspconfig)
 			automatic_installation = true,
