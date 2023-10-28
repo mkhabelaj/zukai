@@ -54,7 +54,6 @@ return {
 			},
 		})
 
-		utils.map("n", "<leader>fb", "<cmd>Telescope git_branches<cr>", "Checkout branch")
 		utils.map("n", "<leader>fc", "<cmd>Telescope colorscheme<cr>", "Colorscheme")
 		utils.map("n", "<leader>fC", "<cmd>Telescope commands<cr>", "Commands")
 		utils.map(
@@ -69,6 +68,12 @@ return {
 		utils.map("n", "<leader>fR", "<cmd>Telescope registers<cr>", "Registers")
 		utils.map("n", "<leader>fs", "<cmd>Telescope grep_string<cr>", "Find String")
 		utils.map("n", "<leader>ft", "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text")
+
+		-- git
+		utils.map("n", "<leader>gc", "<cmd>Telescope git_branches<cr>", "Checkout branch")
+		utils.map("n", "<leader>gC", "<cmd>Telescope git_commits<cr>", "Checkout commit")
+		utils.map("n", "<leader>gb", "<cmd>Telescope git_bcommits<cr>", "Checkout commit (buffer)")
+		utils.map("n", "<leader>go", "<cmd>Telescope git_status<cr>", "Git Status")
 
 		telescope.load_extension("fzf")
 		telescope.load_extension("harpoon")
