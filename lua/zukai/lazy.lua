@@ -11,7 +11,11 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup({ { import = "zukai.plugins" }, { import = "zukai.plugins.lsp.plugins" } }, {
+require("lazy").setup({
+	{ import = "zukai.plugins" },
+	{ import = "zukai.plugins.lsp.plugins" },
+	{ import = "zukai.plugins.debuggers" },
+}, {
 	install = {
 		colorscheme = { "catppuccin-mocha" },
 	},

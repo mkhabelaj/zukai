@@ -126,7 +126,7 @@ return {
 			f = {
 				name = "Search",
 			},
-			p = {
+			u = {
 				name = "LazyVim",
 				c = { "<cmd>Lazy clean<cr>", "Clean" },
 				i = { "<cmd>Lazy install<cr>", "Install" },
@@ -134,6 +134,9 @@ return {
 				s = { "<cmd>Lazy sync<cr>", "Sync" },
 				u = { "<cmd>Lazy updtatusate<cr>", "Update" },
 				l = { "<cmd>Lazy<cr>", "Open Lazy" },
+			},
+			p = {
+				name = "TreeSitter Parms",
 			},
 
 			g = {

@@ -32,6 +32,7 @@ return {
 				"eslint_d",
 				"black",
 				"clang-format",
+				"debugpy",
 			},
 			-- auto-install configured servers (with lspconfig)
 			automatic_installation = true,
