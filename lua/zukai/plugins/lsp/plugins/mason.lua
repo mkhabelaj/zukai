@@ -33,6 +33,7 @@ return {
 				"black",
 				"clang-format",
 				"debugpy",
+				"codelldb",
 			},
 			-- auto-install configured servers (with lspconfig)
 			automatic_installation = true,

@@ -14,7 +14,7 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
 	{ import = "zukai.plugins" },
 	{ import = "zukai.plugins.lsp.plugins" },
-	{ import = "zukai.plugins.debuggers" },
+	{ import = "zukai.plugins.dap" },
 }, {
 	install = {
 		colorscheme = { "catppuccin-mocha" },
