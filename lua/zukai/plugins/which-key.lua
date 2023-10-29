@@ -135,6 +135,12 @@ return {
 				u = { "<cmd>Lazy updtatusate<cr>", "Update" },
 				l = { "<cmd>Lazy<cr>", "Open Lazy" },
 			},
+			d = {
+				name = "DAP",
+				p = {
+					name = "Python",
+				},
+			},
 			p = {
 				name = "TreeSitter Parms",
 			},
