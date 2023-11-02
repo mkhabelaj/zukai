@@ -3,6 +3,6 @@ return {
 	"ellisonleao/glow.nvim",
 	config = true,
 	cmd = "Glow",
-	keys = { utils.make_lazy_key("<leader>G", ":Glow<CR>", "Preview Dot Files") },
+	keys = { utils.make_lazy_key("<leader>mg", ":Glow<CR>", "Preview Dot Files (Glow)") },
 	ft = { "md" },
 }

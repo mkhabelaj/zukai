@@ -158,7 +158,9 @@ return {
 					name = "Trouble",
 				},
 			},
-
+			m = {
+				name = "Preview Dot Files",
+			},
 			r = {
 				name = "Refatorting",
 			},
