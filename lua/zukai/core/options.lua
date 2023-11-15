@@ -43,3 +43,9 @@ opt.iskeyword:append("-")
 opt.spelllang = "en_ca"
 -- enable spell check
 opt.spell = true
+
+-- set fold options
+opt.foldcolumn = "1" -- '0' is not bad
+opt.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
+opt.foldlevelstart = 99
+opt.foldenable = true

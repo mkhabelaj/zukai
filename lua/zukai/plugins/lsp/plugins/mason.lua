@@ -32,6 +32,7 @@ return {
 				"eslint_d",
 				"black",
 				"clang-format",
+				"jdtls",
 				-- For debugging
 				"debugpy",
 				"codelldb",
