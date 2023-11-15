@@ -34,6 +34,7 @@ return {
 				null_ls.builtins.code_actions.gitsigns,
 				formatting.black.with({ extra_args = { "--fast" } }),
 				formatting.clang_format,
+				formatting.google_java_format,
 			},
 			-- configure format on save
 			on_attach = function(current_client, bufnr)

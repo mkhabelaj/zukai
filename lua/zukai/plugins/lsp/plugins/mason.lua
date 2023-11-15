@@ -36,6 +36,9 @@ return {
 				-- For debugging
 				"debugpy",
 				"codelldb",
+				"java-debug-adapter",
+				"java-test",
+				"google-java-format",
 			},
 			-- auto-install configured servers (with lspconfig)
 			automatic_installation = true,
