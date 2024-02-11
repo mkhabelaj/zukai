@@ -8,4 +8,5 @@ return {
 	"pyright",
 	"jsonls",
 	"clangd",
+	"tailwindcss",
 }
