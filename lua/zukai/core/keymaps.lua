@@ -25,10 +25,46 @@ keymap.set("i", "<A-d>", "<Plug>(copilot-dismiss)")
 keymap.set({ "n", "i" }, "<A-p>", "<cmd> Copilot panel<CR>")
 
 -- window management
-keymap.set("n", "<leader>sv", "<C-w>v", { desc = "Split window vertically" }) -- split window vertically
-keymap.set("n", "<leader>sh", "<C-w>s", { desc = "Split window horizontally" }) -- split window horizontally
+keymap.set("n", "<leader>s|", "<C-w>v", { desc = "Split window vertically" }) -- split window vertically
+keymap.set("n", "<leader>s-", "<C-w>s", { desc = "Split window horizontally" }) -- split window horizontally
 keymap.set("n", "<leader>se", "<C-w>=", { desc = "Make splits equal size" }) -- make split windows equal width & height
 keymap.set("n", "<leader>sx", "<cmd>close<CR>", { desc = "Close current split" }) -- close current split window
+keymap.set("n", "<leader>so", "<cmd>only<CR>", { desc = "Close all splits except current" }) -- close all splits except current
+-- increase/decrease window size by default_size
+local default_size = 10
+keymap.set(
+	"n",
+	"<leader>sj",
+	"<cmd>resize -" .. default_size .. "<CR>",
+	{ desc = "Decrease window size by " .. default_size }
+) -- decrease window size
+keymap.set(
+	"n",
+	"<leader>sk",
+	"<cmd>resize +" .. default_size .. "<CR>",
+	{ desc = "Increase window size by " .. default_size }
+) -- increase window size
+keymap.set(
+	"n",
+	"<leader>sh",
+	"<cmd>vertical resize +" .. default_size .. "<CR>",
+	{ desc = "Decrease window size by " .. default_size }
+) -- decrease window size
+
+keymap.set(
+	"n",
+	"<leader>sl",
+	"<cmd>vertical resize -" .. default_size .. "<CR>",
+	{ desc = "Increase window size by " .. default_size }
+) -- increase window size
+
+-- tab management
+keymap.set("n", "<leader>tn", "<cmd>tabnew<CR>", { desc = "New tab" }) -- new tab
+keymap.set("n", "<leader>tc", "<cmd>tabclose<CR>", { desc = "Close tab" }) -- close tab
+-- move to next/previous tab
+keymap.set("n", "<leader>tp", "<cmd>tabprevious<CR>", { desc = "Previous tab" })
+keymap.set("n", "<leader>tn", "<cmd>tabnext<CR>", { desc = "Next tab" })
+keymap.set("n", "<leader>te", "<cmd>tabedit<CR>", { desc = "Edit tab" }) -- edit tab
 
 -- git keymaps
 -- close nvim
