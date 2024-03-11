@@ -11,6 +11,8 @@ keymap.set("n", "<leader>+", "<C-a>", { desc = "Increment number" }) -- incremen
 keymap.set("n", "<leader>-", "<C-x>", { desc = "Decrement number" }) -- decrement
 -- clear search highlights
 keymap.set("n", "<leader>N", ":nohl<CR>", { desc = "Clear search highlights" })
+-- dismiss noice messages
+keymap.set("n", "<leader>nd", "<cmd>NoiceDismiss<CR>", { desc = "Dismiss noice messages" })
 
 -- Copilot keymaps
 -- map cycle through suggestions forword to alt + j
