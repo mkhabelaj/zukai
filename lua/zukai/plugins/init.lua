@@ -6,4 +6,6 @@ return {
 	"inkarkat/vim-ReplaceWithRegister", -- replace with register contents using motion (gr + motion)
 
 	"github/copilot.vim",
+
+	"nvim-tree/nvim-web-devicons",
 }
