@@ -132,7 +132,7 @@ return {
 				i = { "<cmd>Lazy install<cr>", "Install" },
 				r = { "<cmd>Lazy restore<cr>", "Restore to lock file" },
 				s = { "<cmd>Lazy sync<cr>", "Sync" },
-				u = { "<cmd>Lazy updtatusate<cr>", "Update" },
+				u = { "<cmd>Lazy update<cr>", "Update" },
 				l = { "<cmd>Lazy<cr>", "Open Lazy" },
 			},
 			d = {
