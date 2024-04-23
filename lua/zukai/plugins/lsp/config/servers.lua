@@ -10,4 +10,5 @@ return {
 	"clangd",
 	"tailwindcss",
 	"eslint",
+	"phpactor",
 }
