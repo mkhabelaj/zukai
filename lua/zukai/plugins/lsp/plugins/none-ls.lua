@@ -39,6 +39,8 @@ return {
 				formatting.black.with({ extra_args = { "--fast" } }),
 				formatting.clang_format,
 				formatting.google_java_format,
+				diagnostics.phpcs,
+				formatting.phpcbf,
 			},
 			-- configure format on save
 			on_attach = function(current_client, bufnr)

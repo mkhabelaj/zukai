@@ -32,6 +32,9 @@ return {
 				"black",
 				"clang-format",
 				"jdtls",
+				-- php linting and formatting
+				"phpcs",
+				"phpcbf",
 				-- For debugging
 				"debugpy",
 				"codelldb",
