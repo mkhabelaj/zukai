@@ -41,6 +41,7 @@ return {
 				"java-debug-adapter",
 				"java-test",
 				"google-java-format",
+				"eslint",
 			},
 			-- auto-install configured servers (with lspconfig)
 			automatic_installation = true,

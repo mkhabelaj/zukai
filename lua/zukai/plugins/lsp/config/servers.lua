@@ -9,6 +9,5 @@ return {
 	"jsonls",
 	"clangd",
 	"tailwindcss",
-	"eslint",
 	"phpactor",
 }

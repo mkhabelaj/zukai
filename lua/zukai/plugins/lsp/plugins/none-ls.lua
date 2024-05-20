@@ -28,7 +28,7 @@ return {
 				--  "formatting.prettier.with({disabled_filetypes = {}})" (see null-ls docs)
 				formatting.prettier, -- js/ts formatter
 				formatting.stylua, -- lua formatter
-				require("none-ls.code_actions.eslint"),
+				-- require("none-ls.code_actions.eslint"),
 				require("none-ls.diagnostics.eslint").with({ -- js/ts linter
 					-- only enable eslint if root has .eslintrc.js (not in youtube nvim video)
 					condition = function(utils)
